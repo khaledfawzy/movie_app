@@ -30,7 +30,7 @@ class MovieRecomendedMovieItem extends StatelessWidget {
         children: [
           Expanded(
             child: MoviePoster(
-              aspectRatio: 70/60,
+              aspectRatio: 70/80,
               movie: movies,
               height: 160.h,
             ),

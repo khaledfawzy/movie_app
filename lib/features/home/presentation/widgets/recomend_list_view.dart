@@ -15,7 +15,7 @@ class RecomendedMoviesSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
      // width: double.infinity,
-      height: 200.h,
+      height: 220.h,
       padding: EdgeInsets.symmetric(vertical: 5.h),
        color: AppColors.darkColor,
       child: Column(
