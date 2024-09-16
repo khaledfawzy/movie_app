@@ -47,6 +47,9 @@ dependencies:
   flutter_lints: ^4.0.0
   dio: ^5.7.0
   flutter_bloc: ^8.1.6
+  dartz: ^0.10.1
+  get_it: ^7.7.0
+  get: ^4.6.6
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

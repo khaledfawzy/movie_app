@@ -1,6 +1,6 @@
 import 'package:movie_app/core/constants/api_constants.dart';
 
-class Movie {
+class MovieModel {
   final bool? adult;
   final String? backdropPath;
   final List<int?>? genreIds;
@@ -16,7 +16,7 @@ class Movie {
   final double? voteAverage;
   final int? voteCount;
 
-  Movie({
+  MovieModel({
     this.adult,
     this.backdropPath,
     this.genreIds,
@@ -33,8 +33,8 @@ class Movie {
     this.voteCount,
   });
 
-  factory Movie.fromJson(Map<String, dynamic> json) {
-    return Movie(
+  factory MovieModel.fromJson(Map<String, dynamic> json) {
+    return MovieModel(
       adult: json['adult'],
       backdropPath: json['backdrop_path'],
       genreIds: List<int>.from(json['genre_ids']),
@@ -72,8 +72,8 @@ class Movie {
   }
 }
 
-List<Movie> movies = [
-  Movie(
+List<MovieModel> movies = [
+  MovieModel(
     genreIds: [28, 35, 878],
     id: 533535,
     originalLanguage: "en",
@@ -86,7 +86,7 @@ List<Movie> movies = [
     title: "Deadpool & Wolverine",
     voteAverage: 7.7,
   ),
-  Movie(
+  MovieModel(
     genreIds: [28, 35, 878],
     id: 533535,
     originalLanguage: "en",
@@ -99,7 +99,7 @@ List<Movie> movies = [
     title: "Deadpool & Wolverine",
     voteAverage: 7.7,
   ),
-  Movie(
+  MovieModel(
     genreIds: [28, 35, 878],
     id: 533535,
     originalLanguage: "en",
@@ -112,7 +112,7 @@ List<Movie> movies = [
     title: "Deadpool & Wolverine",
     voteAverage: 7.7,
   ),
-  Movie(
+  MovieModel(
     genreIds: [28, 35, 878],
     id: 533535,
     originalLanguage: "en",
