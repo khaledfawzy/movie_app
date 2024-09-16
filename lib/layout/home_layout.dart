@@ -29,6 +29,7 @@ class _HomeLayoutState extends State<HomeLayout> {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
+        
         onTap: (value) {
           currentIndex = value;
           setState(() {});

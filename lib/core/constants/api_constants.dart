@@ -9,4 +9,4 @@ const String similarMovies = '/similar?';
 const String searchMovies = 'search/movie?query=';
 const String moviesCategoryNames = 'genre/movie/list?';
 const String moviesCategory = 'discover/movie?with_genres=';
-const String baseImageUrl = 'https://image.tmdb.org/t/p/original/';
+const String baseImageUrl = 'https://image.tmdb.org/t/p/original';
