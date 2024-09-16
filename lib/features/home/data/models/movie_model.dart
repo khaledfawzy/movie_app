@@ -17,20 +17,20 @@ class Movie {
   final int? voteCount;
 
   Movie({
-     this.adult,
-     this.backdropPath,
-     this.genreIds,
-     this.id,
-     this.originalLanguage,
-     this.originalTitle,
-     this.overview,
-     this.popularity,
-     this.posterPath,
-     this.releaseDate,
-     this.title,
-     this.video,
-     this.voteAverage,
-     this.voteCount,
+    this.adult,
+    this.backdropPath,
+    this.genreIds,
+    this.id,
+    this.originalLanguage,
+    this.originalTitle,
+    this.overview,
+    this.popularity,
+    this.posterPath,
+    this.releaseDate,
+    this.title,
+    this.video,
+    this.voteAverage,
+    this.voteCount,
   });
 
   factory Movie.fromJson(Map<String, dynamic> json) {
@@ -72,54 +72,60 @@ class Movie {
   }
 }
 
-
-  List<Movie> movies = [
-    Movie(
-      genreIds: [28, 35, 878],
-      id: 533535,
-      originalLanguage: "en",
-      originalTitle: "Deadpool & Wolverine",
-      overview: "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.",
-      popularity: 2680.931,
-      posterPath: "$baseImageUrl/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
-      releaseDate: "2024-07-24",
-      title: "Deadpool & Wolverine",
-      voteAverage: 7.7,
-    ), Movie(
-      genreIds: [28, 35, 878],
-      id: 533535,
-      originalLanguage: "en",
-      originalTitle: "Deadpool & Wolverine",
-      overview: "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.",
-      popularity: 2680.931,
-      posterPath: "$baseImageUrl/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
-      releaseDate: "2024-07-24",
-      title: "Deadpool & Wolverine",
-      voteAverage: 7.7,
-    ), Movie(
-      genreIds: [28, 35, 878],
-      id: 533535,
-      originalLanguage: "en",
-      originalTitle: "Deadpool & Wolverine",
-      overview: "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.",
-      popularity: 2680.931,
-      posterPath: "$baseImageUrl/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
-      releaseDate: "2024-07-24",
-      title: "Deadpool & Wolverine",
-      voteAverage: 7.7,
-    ), Movie(
-      genreIds: [28, 35, 878],
-      id: 533535,
-      originalLanguage: "en",
-      originalTitle: "Deadpool & Wolverine",
-      overview: "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.",
-      popularity: 2680.931,
-      posterPath: "$baseImageUrl/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
-      releaseDate: "2024-07-24",
-      title: "Deadpool & Wolverine",
-      voteAverage: 7.7,
-    ), 
-    // Add more movies here
-  ];
+List<Movie> movies = [
+  Movie(
+    genreIds: [28, 35, 878],
+    id: 533535,
+    originalLanguage: "en",
+    originalTitle: "Deadpool & Wolverine",
+    overview:
+        "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.",
+    popularity: 2680.931,
+    posterPath: "$baseImageUrl/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+    releaseDate: "2024-07-24",
+    title: "Deadpool & Wolverine",
+    voteAverage: 7.7,
+  ),
+  Movie(
+    genreIds: [28, 35, 878],
+    id: 533535,
+    originalLanguage: "en",
+    originalTitle: "Deadpool & Wolverine",
+    overview:
+        "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.",
+    popularity: 2680.931,
+    posterPath: "$baseImageUrl/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+    releaseDate: "2024-07-24",
+    title: "Deadpool & Wolverine",
+    voteAverage: 7.7,
+  ),
+  Movie(
+    genreIds: [28, 35, 878],
+    id: 533535,
+    originalLanguage: "en",
+    originalTitle: "Deadpool & Wolverine",
+    overview:
+        "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.",
+    popularity: 2680.931,
+    posterPath: "$baseImageUrl/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+    releaseDate: "2024-07-24",
+    title: "Deadpool & Wolverine",
+    voteAverage: 7.7,
+  ),
+  Movie(
+    genreIds: [28, 35, 878],
+    id: 533535,
+    originalLanguage: "en",
+    originalTitle: "Deadpool & Wolverine",
+    overview:
+        "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.",
+    popularity: 2680.931,
+    posterPath: "$baseImageUrl/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+    releaseDate: "2024-07-24",
+    title: "Deadpool & Wolverine",
+    voteAverage: 7.7,
+  ),
+  // Add more movies here
+];
 
   // Print movie titles
