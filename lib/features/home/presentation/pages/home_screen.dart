@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
   import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../widgets/movie_recomended_movie_item.dart';
 import '../widgets/new_releases_section.dart';
 import '../widgets/popular_movie_carousel_slider.dart';
 import '../widgets/recomend_list_view.dart';
@@ -23,7 +22,7 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               height: 10.h,
             ),
-            const RecomendedMoviesSection(),
+            const RecommendedMoviesSection(),
             ],
         ),
       ),

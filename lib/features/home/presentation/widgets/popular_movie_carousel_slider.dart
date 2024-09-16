@@ -10,7 +10,7 @@ class PopularMovieCarouselSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  SizedBox(
+    return SizedBox(
       height: 170.h,
       child: CarouselSlider.builder(
         itemCount: movies.length,
@@ -28,7 +28,7 @@ class PopularMovieCarouselSlider extends StatelessWidget {
           height: 200.h,
           enableInfiniteScroll: true,
           autoPlay: true,
-          autoPlayInterval: const Duration(seconds: 2),
+          autoPlayInterval: const Duration(seconds: 5),
           scrollDirection: Axis.horizontal,
         ),
       ),

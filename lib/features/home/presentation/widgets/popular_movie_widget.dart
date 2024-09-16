@@ -69,7 +69,7 @@ class PopularMovieCarouselItem extends StatelessWidget {
                         children: [
 
                           Text(
-                            movie.releaseDate!,
+                            movie.releaseDate!.split('-')[0],
                             style: AppStyles.textStyle14,
                             overflow: TextOverflow.ellipsis,
                           ),

@@ -6,8 +6,8 @@ import '../../../../core/utils/app_styles.dart';
 import '../../data/models/movie_model.dart';
 import 'movie_recomended_movie_item.dart';
 
-class RecomendedMoviesSection extends StatelessWidget {
-  const RecomendedMoviesSection({
+class RecommendedMoviesSection extends StatelessWidget {
+  const RecommendedMoviesSection({
     super.key,
   });
 

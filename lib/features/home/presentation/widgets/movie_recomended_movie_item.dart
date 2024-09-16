@@ -30,13 +30,13 @@ class MovieRecomendedMovieItem extends StatelessWidget {
         children: [
           Expanded(
             child: MoviePoster(
-              aspectRatio: 70/80,
+              aspectRatio: 70 / 80,
               movie: movies,
               height: 160.h,
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical:2 ),
+            padding: const EdgeInsets.symmetric(vertical: 2),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -67,14 +67,13 @@ class MovieRecomendedMovieItem extends StatelessWidget {
                     style: AppStyles.textStyle10,
                   ),
                 ),
-
                 Padding(
-                  padding: const EdgeInsets.only(top: 5,left: 5),
+                  padding: const EdgeInsets.only(top: 5, left: 5),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        movies.releaseDate.toString(),
+                        movies.releaseDate.toString().split('-')[0],
                         overflow: TextOverflow.ellipsis,
                         maxLines: 2,
                         style: AppStyles.textStyle10,
@@ -88,12 +87,12 @@ class MovieRecomendedMovieItem extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: 9.h,)
-
+                SizedBox(
+                  height: 9.h,
+                )
               ],
             ),
           ),
-
         ],
       ),
     );
