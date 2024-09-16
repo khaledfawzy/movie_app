@@ -14,10 +14,10 @@ class RecommendedMoviesSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-     // width: double.infinity,
+      // width: double.infinity,
       height: 220.h,
       padding: EdgeInsets.symmetric(vertical: 5.h),
-       color: AppColors.darkColor,
+      color: AppColors.darkColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -30,7 +30,9 @@ class RecommendedMoviesSection extends StatelessWidget {
               ),
             ),
           ),
-            SizedBox(height:10.h,),
+          SizedBox(
+            height: 10.h,
+          ),
           Expanded(
             child: ListView.builder(
                 itemCount: movies.length,
@@ -38,8 +40,9 @@ class RecommendedMoviesSection extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10.w),
-                    child: MovieRecomendedMovieItem(movies: movies[index],
-                     ),
+                    child: MovieRecommendedMovieItem(
+                      movies: movies[index],
+                    ),
                   );
                 }),
           )

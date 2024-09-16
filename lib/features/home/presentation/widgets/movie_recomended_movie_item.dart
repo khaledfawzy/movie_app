@@ -6,10 +6,10 @@ import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/post_widget.dart';
 import '../../data/models/movie_model.dart';
 
-class MovieRecomendedMovieItem extends StatelessWidget {
+class MovieRecommendedMovieItem extends StatelessWidget {
   final MovieModel movies;
 
-  const MovieRecomendedMovieItem({super.key, required this.movies});
+  const MovieRecommendedMovieItem({super.key, required this.movies});
 
   @override
   Widget build(BuildContext context) {
