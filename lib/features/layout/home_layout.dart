@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
- import '../../core/utils/color_manger.dart';
-import '../browser/presentation/pages/browser_screen.dart';
+import '../../core/utils/color_manger.dart';
+import '../browse/presentation/pages/browser_screen.dart';
 import '../home/presentation/pages/home_screen.dart';
 import '../search/presentation/pages/search_screen.dart';
 import '../watchlist/presentation/pages/watch_list_screen.dart';
-
 
 class HomeLayout extends StatefulWidget {
   static const String routeName = "lay";
@@ -20,7 +19,7 @@ class _HomeLayoutState extends State<HomeLayout> {
   List<Widget> taps = [
     const HomeScreen(),
     const SearchScreen(),
-    const BrowserScreen(),
+    const BrowseScreen(),
     const WatchListScreen(),
   ];
 
@@ -29,7 +28,6 @@ class _HomeLayoutState extends State<HomeLayout> {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
-        
         onTap: (value) {
           currentIndex = value;
           setState(() {});
