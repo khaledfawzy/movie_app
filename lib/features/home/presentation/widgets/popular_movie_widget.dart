@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_app/core/constants/api_constants.dart';
 import 'package:movie_app/core/utils/media_query_utils.dart';
 import 'package:movie_app/features/home/data/models/movie_model.dart';
+import 'package:movie_app/features/home/presentation/widgets/background_image_stack.dart';
 import 'package:movie_app/features/home/presentation/widgets/vote_widget.dart';
 
 import '../../../../core/utils/app_styles.dart';
@@ -25,21 +26,7 @@ class PopularMovieCarouselItem extends StatelessWidget {
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-          CachedNetworkImage(
-            imageUrl: '$baseImageUrl${movie.backdropPath}',
-            width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.20,
-            fit: BoxFit.fill,
-          ),
-          Positioned.fill(
-            child: Align(
-              alignment: Alignment.center,
-              child: Image.asset(
-                "assets/icons/play_icon.png",
-                height: 40.h,
-              ),
-            ),
-          ),
+          BackgroundImageStack(movie: movie),
           Positioned(
             bottom: MediaQuery.of(context).size.height * 0.07 * -1,
             right: 0,
@@ -104,6 +91,18 @@ class PopularMovieCarouselItem extends StatelessWidget {
     );
   }
 }
+
+// time format
+// 128m to 2h 08m
+
+// int totalMinutes = 128;
+
+// int hours = totalMinutes ~/ 60; // Integer division to get hours
+// int minutes = totalMinutes % 60; // Remainder gives minutes
+
+// String formattedTime = "${hours}h${minutes.toString().padLeft(2, '0')}m";
+// print(formattedTime); // Output: 2h08m
+
 
 
 // Expanded(
