@@ -1,7 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:movie_app/core/constants/api_constants.dart';
 import 'package:movie_app/core/utils/media_query_utils.dart';
 import 'package:movie_app/features/home/data/models/movie_model.dart';
 import 'package:movie_app/features/home/presentation/widgets/background_image_stack.dart';
