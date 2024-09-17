@@ -13,7 +13,7 @@ import '../../data/models/movie_model.dart';
 
 class PopularMovieCarouselSlider extends StatelessWidget {
   const PopularMovieCarouselSlider({super.key});
-
+//woooow
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -36,11 +36,11 @@ class PopularMovieCarouselSlider extends StatelessWidget {
                 options: CarouselOptions(
                   enlargeCenterPage: true,
                   pageSnapping: false,
+
                   padEnds: false,
                   viewportFraction: 1,
-                   animateToClosest: true,
-                   enlargeFactor: 0.5,
-                  scrollPhysics: const PageScrollPhysics(),
+                   scrollPhysics: const PageScrollPhysics(),
+                  // enlargeFactor: 0.5,
                   clipBehavior: Clip.none,
                   height: 200.h,
                   enableInfiniteScroll: true,
@@ -55,7 +55,12 @@ class PopularMovieCarouselSlider extends StatelessWidget {
               );
             } else {
               return Skeletonizer(
-                child: PopularMovieCarouselItem(movie: movies[1]),
+                child: ListView.builder(
+                  itemCount: movies.length,
+                  itemBuilder: (context,i) {
+                    return PopularMovieCarouselItem(movie: movies[i]);
+                  }
+                ),
               );
             }
           },
