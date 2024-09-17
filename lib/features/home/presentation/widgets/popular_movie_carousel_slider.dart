@@ -55,7 +55,12 @@ class PopularMovieCarouselSlider extends StatelessWidget {
               );
             } else {
               return Skeletonizer(
-                child: PopularMovieCarouselItem(movie: movies[1]),
+                child: ListView.builder(
+                  itemCount: movies.length,
+                  itemBuilder: (context,i) {
+                    return PopularMovieCarouselItem(movie: movies[i]);
+                  }
+                ),
               );
             }
           },
