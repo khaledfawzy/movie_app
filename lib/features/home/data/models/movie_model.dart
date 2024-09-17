@@ -1,6 +1,6 @@
 import 'package:movie_app/core/constants/api_constants.dart';
 
-class MovieModel{
+class MovieModel {
   final bool? adult;
   final String? backdropPath;
   final List<int?>? genreIds;
@@ -17,8 +17,7 @@ class MovieModel{
   final int? voteCount;
   final String? time;
 
-
-  MovieModel( {
+  MovieModel({
     this.time,
     this.adult,
     this.backdropPath,
@@ -52,7 +51,6 @@ class MovieModel{
       video: json['video'],
       voteAverage: json['vote_average'].toDouble(),
       voteCount: json['vote_count'],
-
     );
   }
 
@@ -81,14 +79,12 @@ List<MovieModel> movies = [
     genreIds: [28, 35, 878],
     id: 533535,
     originalLanguage: "en",
-    time: "1h:30",
+    time: "1h:30m",
     originalTitle: "Deadpool & Wolverine",
     backdropPath: "$baseImageUrl/waPt1Dv5kWhbNna5rTv2NGfeb7O.jpg",
-
     overview:
         "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.",
     popularity: 2680.931,
-
     posterPath: "$baseImageUrl/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
     releaseDate: "2024-07-24",
     title: "Deadpool & Wolverine",
@@ -97,10 +93,8 @@ List<MovieModel> movies = [
   MovieModel(
     genreIds: [28, 35, 878],
     id: 533535,
-    time: "1h:30",
-
+    time: "1h:30m",
     backdropPath: "$baseImageUrl/waPt1Dv5kWhbNna5rTv2NGfeb7O.jpg",
-
     originalLanguage: "en",
     originalTitle: "Deadpool & Wolverine",
     overview:
@@ -115,10 +109,8 @@ List<MovieModel> movies = [
     genreIds: [28, 35, 878],
     id: 533535,
     originalLanguage: "en",
-    time: "1h:30",
-
+    time: "1h:30m",
     backdropPath: "$baseImageUrl/waPt1Dv5kWhbNna5rTv2NGfeb7O.jpg",
-
     originalTitle: "Deadpool & Wolverine",
     overview:
         "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.",
@@ -132,11 +124,9 @@ List<MovieModel> movies = [
     genreIds: [28, 35, 878],
     id: 533535,
     originalLanguage: "en",
-    time: "1h:30",
-
+    time: "1h:30m",
     originalTitle: "Deadpool & Wolverine",
     backdropPath: "$baseImageUrl/waPt1Dv5kWhbNna5rTv2NGfeb7O.jpg",
-
     overview:
         "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.",
     popularity: 2680.931,

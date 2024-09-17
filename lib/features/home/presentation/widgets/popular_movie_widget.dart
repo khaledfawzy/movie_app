@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_app/core/constants/api_constants.dart';
 import 'package:movie_app/core/utils/media_query_utils.dart';
 import 'package:movie_app/features/home/data/models/movie_model.dart';
+import 'package:movie_app/features/home/presentation/widgets/vote_widget.dart';
 
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/post_widget.dart';
@@ -25,8 +26,7 @@ class PopularMovieCarouselItem extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           CachedNetworkImage(
-            imageUrl: 
-            '$baseImageUrl${movie.backdropPath}',
+            imageUrl: '$baseImageUrl${movie.backdropPath}',
             width: double.infinity,
             height: MediaQuery.of(context).size.height * 0.20,
             fit: BoxFit.fill,
@@ -47,14 +47,14 @@ class PopularMovieCarouselItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 MoviePoster(
-                  aspectRatio: 70/100,
+                  aspectRatio: 70 / 100,
                   height: 150.h,
                   movie: movie,
                 ),
                 const SizedBox(
                   width: 15,
                 ),
-                Container(
+                SizedBox(
                   height: MediaQueryUtils.getHeightPercentage(context, 0.09),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,7 +70,6 @@ class PopularMovieCarouselItem extends StatelessWidget {
                       ),
                       Row(
                         children: [
-
                           Text(
                             movie.releaseDate!.split('-')[0],
                             style: AppStyles.textStyle14,
@@ -79,29 +78,15 @@ class PopularMovieCarouselItem extends StatelessWidget {
                           const SizedBox(
                             width: 7,
                           ),
+                          VoteWidget(movie: movie,)
                           // Text(
                           //   movie.popularity.toString(),
                           //   style: AppStyles.textStyle12,
                           //   overflow: TextOverflow.ellipsis,
                           //   maxLines: 4,
                           // ),
-
-                          Row(
-                            children: [
-                              Icon(Icons.star,color: Colors.yellow,size: 15,),
-                              Text(
-                                movie.voteAverage.toString(),
-                                style: AppStyles.textStyle14,
-                                overflow: TextOverflow.ellipsis,
-                                maxLines: 2,
-                              ),
-                            ],
-                          ),
-
                         ],
                       ),
-
-
                     ],
                   ),
                 )
@@ -113,6 +98,8 @@ class PopularMovieCarouselItem extends StatelessWidget {
     );
   }
 }
+
+
 // Expanded(
 // child: Column(
 // crossAxisAlignment: CrossAxisAlignment.start,
