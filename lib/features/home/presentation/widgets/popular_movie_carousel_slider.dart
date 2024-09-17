@@ -30,14 +30,15 @@ class PopularMovieCarouselSlider extends StatelessWidget {
               return CarouselSlider.builder(
                 itemCount: state.popularMoviesList.length,
                 itemBuilder: (context, index, realIndex) {
-                  return PopularMovieCarouselItem(movie: state.popularMoviesList[index]);
+                  return PopularMovieCarouselItem(
+                      movie: state.popularMoviesList[index]);
                 },
                 options: CarouselOptions(
                   enlargeCenterPage: true,
                   pageSnapping: false,
                   padEnds: false,
                   viewportFraction: 1,
-                  scrollPhysics: const NeverScrollableScrollPhysics(),
+                  // scrollPhysics: const NeverScrollableScrollPhysics(),
                   // enlargeFactor: 0.5,
                   clipBehavior: Clip.none,
                   height: 200.h,

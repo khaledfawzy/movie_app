@@ -20,7 +20,7 @@ class PopularMovieCarouselItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: double.infinity,
+      width: MediaQueryUtils.getScreenWidth(context),
       height: 180,
       child: Stack(
         clipBehavior: Clip.none,
@@ -57,21 +57,20 @@ class PopularMovieCarouselItem extends StatelessWidget {
                 ),
                 SizedBox(
                   height: MediaQueryUtils.getHeightPercentage(context, 0.09),
+                  width: MediaQueryUtils.getWidthPercentage(context, 0.5),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Expanded(
-                        child: Text(
-                          movie.title!,
-                          style: AppStyles.textStyle14,
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 2,
-
-                        ),
+                      Text(
+                        movie.title!,
+                        style: AppStyles.textStyle14,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 2,
                       ),
-                      const SizedBox(
-                        height: 10,
-                      ),
+                      // const SizedBox(
+                      //   height: 10,
+                      // ),
                       Row(
                         children: [
                           Text(
