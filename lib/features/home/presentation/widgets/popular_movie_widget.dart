@@ -36,6 +36,7 @@ class PopularMovieCarouselItem extends StatelessWidget {
               alignment: Alignment.center,
               child: Image.asset(
                 "assets/icons/play_icon.png",
+                height: 40.h,
               ),
             ),
           ),
@@ -59,11 +60,13 @@ class PopularMovieCarouselItem extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        movie.title!,
-                        style: AppStyles.textStyle14,
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 2,
+                      Expanded(
+                        child: Text(
+                          movie.title!,
+                          style: AppStyles.textStyle14,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+                        ),
                       ),
                       const SizedBox(
                         height: 10,
@@ -72,13 +75,16 @@ class PopularMovieCarouselItem extends StatelessWidget {
                         children: [
                           Text(
                             movie.releaseDate!.split('-')[0],
-                            style: AppStyles.textStyle14,
+                            style: AppStyles.textStyle12
+                                .copyWith(color: Colors.white54),
                             overflow: TextOverflow.ellipsis,
                           ),
                           const SizedBox(
                             width: 7,
                           ),
-                          VoteWidget(movie: movie,)
+                          VoteWidget(
+                            movie: movie,
+                          )
                           // Text(
                           //   movie.popularity.toString(),
                           //   style: AppStyles.textStyle12,
