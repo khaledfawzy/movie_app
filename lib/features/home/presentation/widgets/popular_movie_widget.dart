@@ -66,6 +66,7 @@ class PopularMovieCarouselItem extends StatelessWidget {
                           style: AppStyles.textStyle14,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 2,
+
                         ),
                       ),
                       const SizedBox(
