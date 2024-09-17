@@ -36,9 +36,10 @@ class PopularMovieCarouselSlider extends StatelessWidget {
                 options: CarouselOptions(
                   enlargeCenterPage: true,
                   pageSnapping: false,
+
                   padEnds: false,
                   viewportFraction: 1,
-                  // scrollPhysics: const NeverScrollableScrollPhysics(),
+                   scrollPhysics: const PageScrollPhysics(),
                   // enlargeFactor: 0.5,
                   clipBehavior: Clip.none,
                   height: 200.h,
