@@ -4,7 +4,7 @@ import 'package:movie_app/core/constants/api_constants.dart';
 class ApiServices {
   final Dio _dio;
 
-  Future<List<dynamic>> get({
+  Future<dynamic> get({
     required String endPoint,
     Map<String, dynamic>? parameters,
     bool isListString=false,
@@ -20,7 +20,7 @@ class ApiServices {
       List<String> stringList = response.data.map((e) => e.toString()).toList();
       return stringList;
     } else {
-      return response.data;
+      return response.data['results'];
     }
   }
 

@@ -21,7 +21,11 @@ class HomeRepoImpl implements HomeRepo{
   Future<Either<Failure, List<MovieModel>>> fetchPopularMovies() async{
     try {
       var data = await apiServices.get(
-          endPoint: popularMovies);
+          endPoint: popularMovies,
+          parameters: {
+            'page':1
+          }
+          );
 
       List<MovieModel> popularMovieList = getMoviesList(data);
       return right(popularMovieList);
@@ -55,7 +59,7 @@ class HomeRepoImpl implements HomeRepo{
   Future<Either<Failure, List<MovieModel>>> fetchRecommendedMovies() async{
    try {
       var data = await apiServices.get(
-          endPoint: upcomingMovies);
+          endPoint: topRatedMovies);
 
       List<MovieModel> recommendedMovieList = getMoviesList(data);
       return right(recommendedMovieList);

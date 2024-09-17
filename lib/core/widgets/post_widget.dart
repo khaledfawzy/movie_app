@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_app/core/constants/api_constants.dart';
 import 'package:movie_app/features/home/data/models/movie_model.dart';
 
 class MoviePoster extends StatelessWidget {
@@ -23,8 +25,8 @@ class MoviePoster extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
                 image: DecorationImage(
                   fit: BoxFit.fill,
-                  image: NetworkImage(
-                      'https://image.tmdb.org/t/p/w500${movie.posterPath}'),
+                  image: CachedNetworkImageProvider(
+                      '$baseImageUrl${movie.posterPath}'),
                 ),
               ),
             ),
