@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/features/movie_details/presentation/pages/movie_details_screen.dart';
-
 import '../../core/utils/color_manger.dart';
 import '../browse/presentation/pages/browser_screen.dart';
-import '../home/data/models/movie_model.dart';
 import '../home/presentation/pages/home_screen.dart';
 import '../search/presentation/pages/search_screen.dart';
 import '../watchlist/presentation/pages/watch_list_screen.dart';
