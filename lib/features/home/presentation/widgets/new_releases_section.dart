@@ -5,6 +5,7 @@ import 'package:movie_app/core/services/network/api_services.dart';
 import 'package:movie_app/core/utils/setup_serv_locator.dart';
 import 'package:movie_app/features/home/data/repos/home_repo.dart';
 import 'package:movie_app/features/home/presentation/manager/new_release_cubit/new_release_cubit.dart';
+import 'package:movie_app/features/movie_details/presentation/pages/movie_details_screen.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
@@ -52,10 +53,23 @@ class NewReleasesSection extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return Padding(
                           padding: EdgeInsets.symmetric(horizontal: 10.w),
-                          child: MoviePoster(
-                            movie: state.newReleaseMoviesList[index],
-                            height: 150.h,
-                            aspectRatio: 70 / 100,
+                          child: InkWell(
+                            onTap: () {
+                              // Navigate to movie details page with movie id
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => MovieDetailsScreen(
+                                      movieId:
+                                          state.newReleaseMoviesList[index].id!),
+                                ),
+                              );
+                            },
+                            child: MoviePoster(
+                              movie: state.newReleaseMoviesList[index],
+                              height: 150.h,
+                              aspectRatio: 70 / 100,
+                            ),
                           ),
                         );
                       },
@@ -69,15 +83,14 @@ class NewReleasesSection extends StatelessWidget {
                   } else {
                     return Skeletonizer(
                       child: ListView.builder(
-                        itemCount: movies.length,
-                        itemBuilder: (context,index) {
-                          return MoviePoster(
-                            movie: movies[index],
-                            height: 150.h,
-                            aspectRatio: 70 / 100,
-                          );
-                        }
-                      ),
+                          itemCount: movies.length,
+                          itemBuilder: (context, index) {
+                            return MoviePoster(
+                              movie: movies[index],
+                              height: 150.h,
+                              aspectRatio: 70 / 100,
+                            );
+                          }),
                     );
                   }
                 },

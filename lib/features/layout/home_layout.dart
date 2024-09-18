@@ -11,6 +11,8 @@ import '../watchlist/presentation/pages/watch_list_screen.dart';
 class HomeLayout extends StatefulWidget {
   static const String routeName = "lay";
 
+  const HomeLayout({super.key});
+
   @override
   State<HomeLayout> createState() => _HomeLayoutState();
 }
@@ -21,7 +23,7 @@ class _HomeLayoutState extends State<HomeLayout> {
   List<Widget> taps = [
     const HomeScreen(),
     const SearchScreen(),
-    MovieDetailsScreen(movies: movies[0]),
+    const MovieDetailsScreen(movieId: 1,),
     const WatchListScreen(),
   ];
 
