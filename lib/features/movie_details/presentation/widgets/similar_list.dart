@@ -7,6 +7,7 @@ import 'package:movie_app/features/home/data/models/movie_model.dart';
 import 'package:movie_app/features/home/presentation/widgets/recommended_movies_item.dart';
 import 'package:movie_app/features/movie_details/data/repos/similar_repo.dart';
 import 'package:movie_app/features/movie_details/presentation/manager/cubit/similar_cubit.dart';
+import 'package:movie_app/features/movie_details/presentation/pages/movie_details_screen.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../../core/utils/app_colors.dart';
@@ -54,8 +55,20 @@ class SimilarMoviesSection extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return Padding(
                             padding: EdgeInsets.symmetric(horizontal: 10.w),
-                            child: RecommendedMoviesItem(
-                              movies: state.similarMoviesList[index],
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => MovieDetailsScreen(
+                                        movieId:
+                                            state.similarMoviesList[index].id!),
+                                  ),
+                                );
+                              },
+                              child: RecommendedMoviesItem(
+                                movies: state.similarMoviesList[index],
+                              ),
                             ),
                           );
                         });
