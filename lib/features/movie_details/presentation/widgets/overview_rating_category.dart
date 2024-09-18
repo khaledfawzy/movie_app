@@ -13,7 +13,7 @@ class OverviewRatingCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return    SizedBox(
+    return SizedBox(
       width: MediaQueryUtils.getWidthPercentage(context, 0.50),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,8 +40,8 @@ class OverviewRatingCategory extends StatelessWidget {
             movies.overview!,
             maxLines: 8,
             overflow: TextOverflow.ellipsis,
-            style: AppStyles.textStyle12
-                .copyWith(color: AppColors.greyLightColor),
+            style:
+                AppStyles.textStyle10.copyWith(color: AppColors.greyLightColor),
           ),
           Row(
             children: [
@@ -50,7 +50,7 @@ class OverviewRatingCategory extends StatelessWidget {
                 color: AppColors.yellowColor,
               ),
               Text(
-                movies.voteAverage.toString(),
+                movies.voteAverage!.toStringAsFixed(1),
                 style: AppStyles.textStyle16,
               ),
             ],
@@ -58,6 +58,5 @@ class OverviewRatingCategory extends StatelessWidget {
         ],
       ),
     );
-
   }
 }

@@ -17,7 +17,7 @@ class TitleAndTimeWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(movies.title!),
+          Text(movies.title!,style: AppStyles.textStyle16),
           SizedBox(
             height: 10.h,
           ),
