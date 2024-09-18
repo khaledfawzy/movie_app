@@ -12,7 +12,7 @@ class RecommendedMoviesItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 3 / 6,
+      aspectRatio: 3.2 / 6,
       child: Container(
         decoration: const BoxDecoration(
           color: AppColors.cardDarkColor,
@@ -30,22 +30,33 @@ class RecommendedMoviesItem extends StatelessWidget {
             MoviePoster(
               movie: movies,
               height: 106.h,
-              aspectRatio: 5 / 6,
+              aspectRatio: 5.3 / 6,
             ),
             SizedBox(height: 2.h),
-            VoteWidget(movie: movies),
-            SizedBox(height: 5.h),
             Expanded(
-              child: Text(
-                movies.originalTitle ?? '',
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w600),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    VoteWidget(movie: movies),
+                    SizedBox(height: 4.h),
+                    Expanded(
+                      child: Text(
+                        movies.originalTitle ?? '',
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            fontSize: 10.sp, fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                    Text(
+                      movies.releaseDate!.split('-')[0],
+                      style: TextStyle(fontSize: 12.sp, color: Colors.white54),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            Text(
-              movies.releaseDate!.split('-')[0],
-              style: TextStyle(fontSize: 12.sp, color: Colors.white54),
             ),
           ],
         ),
