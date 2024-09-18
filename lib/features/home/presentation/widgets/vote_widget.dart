@@ -16,7 +16,7 @@ class VoteWidget extends StatelessWidget {
         ),
         Text(
           movie.voteAverage!.toStringAsFixed(1),
-          style: AppStyles.textStyle12,
+          style: AppStyles.textStyle12.copyWith(color: Colors.white70),
           overflow: TextOverflow.ellipsis,
           maxLines: 2,
         ),

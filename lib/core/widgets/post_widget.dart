@@ -6,17 +6,20 @@ import 'package:movie_app/features/home/data/models/movie_model.dart';
 class MoviePoster extends StatelessWidget {
   final MovieModel movie;
   final double height;
- final double aspectRatio;
+  final double aspectRatio;
 
-
-  const MoviePoster({super.key, required this.movie, required this.height, required this.aspectRatio});
+  const MoviePoster(
+      {super.key,
+      required this.movie,
+      required this.height,
+      required this.aspectRatio});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: height,
-       // width: 125,
-       child: Stack(
+      // width: 125,
+      child: Stack(
         children: [
           AspectRatio(
             aspectRatio: aspectRatio,
@@ -25,8 +28,11 @@ class MoviePoster extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
                 image: DecorationImage(
                   fit: BoxFit.fill,
-                  image: CachedNetworkImageProvider(
-                      '$baseImageUrl${movie.posterPath}'),
+                  image: movie.posterPath != null
+                      ? CachedNetworkImageProvider(
+                          '$baseImageUrl${movie.posterPath}',
+                        )
+                      : const AssetImage('assets/images/poster.png'),
                 ),
               ),
             ),
@@ -37,8 +43,8 @@ class MoviePoster extends StatelessWidget {
             child: InkWell(
               onTap: () {},
               child: Container(
-                width: 32,
-                height: 50,
+                width: 27,
+                height: 40,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   image: const DecorationImage(

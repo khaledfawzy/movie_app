@@ -6,7 +6,7 @@ const String upcomingMovies = 'movie/upcoming?';
 const String topRatedMovies = 'movie/top_rated?';
 const String movieDetails = 'movie/';
 const String similarMovies = '/similar?';
-const String searchMovies = 'search/movie?query=';
+const String searchMovies = 'search/movie?';
 const String moviesCategoryNames = 'genre/movie/list?';
 const String moviesCategory = 'discover/movie?with_genres=';
 const String baseImageUrl = 'https://image.tmdb.org/t/p/original';
