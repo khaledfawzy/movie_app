@@ -3,7 +3,7 @@ import 'package:movie_app/core/constants/api_constants.dart';
 class MovieModel {
   final bool? adult;
   final String? backdropPath;
-  final List<int?>? genreIds;
+  // final List<int?>? genreIds;
   final int? id;
   final String? originalLanguage;
   final String? originalTitle;
@@ -21,7 +21,7 @@ class MovieModel {
     this.time,
     this.adult,
     this.backdropPath,
-    this.genreIds,
+    // this.genreIds,
     this.id,
     this.originalLanguage,
     this.originalTitle,
@@ -39,17 +39,17 @@ class MovieModel {
     return MovieModel(
       adult: json['adult'],
       backdropPath: json['backdrop_path'],
-      genreIds: List<int>.from(json['genre_ids']),
+      // genreIds: List<int>.from(json['genre_ids']).isEmpty?[18],
       id: json['id'],
       originalLanguage: json['original_language'],
       originalTitle: json['original_title'],
       overview: json['overview'],
-      popularity: json['popularity'].toDouble(),
+      popularity: json['popularity'],
       posterPath: json['poster_path'],
       releaseDate: json['release_date'],
       title: json['title'],
       video: json['video'],
-      voteAverage: json['vote_average'].toDouble(),
+      voteAverage: json['vote_average'],
       voteCount: json['vote_count'],
     );
   }
@@ -58,7 +58,7 @@ class MovieModel {
     return {
       'adult': adult,
       'backdrop_path': backdropPath,
-      'genre_ids': genreIds,
+      // 'genre_ids': genreIds,
       'id': id,
       'original_language': originalLanguage,
       'original_title': originalTitle,
@@ -76,7 +76,7 @@ class MovieModel {
 
 List<MovieModel> movies = [
   MovieModel(
-    genreIds: [28, 35, 878],
+    // genreIds: [28, 35, 878],
     id: 533535,
     originalLanguage: "en",
     time: "1h:30m",
@@ -91,7 +91,7 @@ List<MovieModel> movies = [
     voteAverage: 7.7,
   ),
   MovieModel(
-    genreIds: [28, 35, 878],
+    // genreIds: [28, 35, 878],
     id: 533535,
     time: "1h:30m",
     backdropPath: "$baseImageUrl/waPt1Dv5kWhbNna5rTv2NGfeb7O.jpg",
@@ -106,7 +106,7 @@ List<MovieModel> movies = [
     voteAverage: 7.7,
   ),
   MovieModel(
-    genreIds: [28, 35, 878],
+    // genreIds: [28, 35, 878],
     id: 533535,
     originalLanguage: "en",
     time: "1h:30m",
@@ -121,7 +121,7 @@ List<MovieModel> movies = [
     voteAverage: 7.7,
   ),
   MovieModel(
-    genreIds: [28, 35, 878],
+    // genreIds: [28, 35, 878],
     id: 533535,
     originalLanguage: "en",
     time: "1h:30m",

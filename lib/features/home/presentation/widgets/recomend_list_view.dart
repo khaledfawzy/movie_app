@@ -11,7 +11,6 @@ import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../data/models/movie_model.dart';
-import 'movie_recomended_movie_item.dart';
 
 class RecommendedMoviesSection extends StatelessWidget {
   const RecommendedMoviesSection({
