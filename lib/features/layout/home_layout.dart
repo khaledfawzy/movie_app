@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movie_app/features/watchlist/presentation/manager/watch_list_cubit/watch_list_cubit.dart';
 import '../../core/utils/color_manger.dart';
 import '../browse/presentation/pages/browser_screen.dart';
 import '../home/presentation/pages/home_screen.dart';
@@ -31,6 +33,9 @@ class _HomeLayoutState extends State<HomeLayout> {
         currentIndex: currentIndex,
         onTap: (value) {
           currentIndex = value;
+          if (currentIndex == 3) {
+            BlocProvider.of<WatchListCubit>(context).fetchMoviesFromWatchList();
+          }
           setState(() {});
         },
         items: const <BottomNavigationBarItem>[

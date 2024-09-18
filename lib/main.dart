@@ -12,8 +12,10 @@ import 'app.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
-  await Hive.openBox(kMovieBox);
+  // await movieBox.deleteFromDisk();
   Hive.registerAdapter(MovieModelAdapter());
+
+  await Hive.openBox<MovieModel>(kMovieBox);
   setupServicesLocator();
   Bloc.observer = SimpleBlocObserver();
   await Future.delayed(const Duration(seconds: 3));
