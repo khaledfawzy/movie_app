@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/services/network/api_services.dart';
 import 'package:movie_app/core/utils/setup_serv_locator.dart';
 import 'package:movie_app/features/home/data/models/movie_model.dart';
+import 'package:movie_app/features/movie_details/presentation/pages/movie_details_screen.dart';
 import 'package:movie_app/features/search/data/repos/search_repo.dart';
 import 'package:movie_app/features/search/presentation/manager/search_cubit/search_cubit.dart';
 import 'package:movie_app/features/search/presentation/widgets/custom_search_field.dart';
@@ -53,8 +54,20 @@ class SearchScreen extends StatelessWidget {
                             ),
                           ),
                           // Replace this with your own movie item widget
-                          itemBuilder: (context, index) => SearchResultItem(
-                            movieModel: state.searchResultList[index],
+                          itemBuilder: (context, index) => InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => MovieDetailsScreen(
+                                    movieId: state.searchResultList[index].id!,
+                                  ),
+                                ),
+                              );
+                            },
+                            child: SearchResultItem(
+                              movieModel: state.searchResultList[index],
+                            ),
                           ),
                         ),
                       );
