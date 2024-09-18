@@ -1,20 +1,39 @@
+import 'package:hive/hive.dart';
 import 'package:movie_app/core/constants/api_constants.dart';
 
-class MovieModel {
+part 'movie_model.g.dart';
+
+
+@HiveType(typeId: 0)
+class MovieModel extends HiveObject {
+  @HiveField(0)
   final bool? adult;
+  @HiveField(1)
   final String? backdropPath;
   // final List<int?>? genreIds;
+  @HiveField(2)
   final int? id;
+  @HiveField(3)
   final String? originalLanguage;
+  @HiveField(4)
   final String? originalTitle;
+  @HiveField(5)
   final String? overview;
+  @HiveField(6)
   final double? popularity;
+  @HiveField(7)
   final String? posterPath;
+  @HiveField(8)
   final String? releaseDate;
+  @HiveField(9)
   final String? title;
+  @HiveField(10)
   final bool? video;
+  @HiveField(11)
   final double? voteAverage;
+  @HiveField(12)
   final int? voteCount;
+  @HiveField(13)
   final String? time;
 
   MovieModel({
