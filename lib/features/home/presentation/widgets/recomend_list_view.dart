@@ -6,6 +6,7 @@ import 'package:movie_app/core/utils/setup_serv_locator.dart';
 import 'package:movie_app/features/home/data/repos/home_repo.dart';
 import 'package:movie_app/features/home/presentation/manager/recomended_cubit/recommended_cubit.dart';
 import 'package:movie_app/features/home/presentation/widgets/recommended_movies_item.dart';
+import 'package:movie_app/features/movie_details/presentation/pages/movie_details_screen.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../../core/utils/app_colors.dart';
@@ -53,8 +54,20 @@ class RecommendedMoviesSection extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return Padding(
                             padding: EdgeInsets.symmetric(horizontal: 10.w),
-                            child: RecommendedMoviesItem(
-                              movies: state.recommendedList[index],
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => MovieDetailsScreen(
+                                        movieId:
+                                            state.recommendedList[index].id!),
+                                  ),
+                                );
+                              },
+                              child: RecommendedMoviesItem(
+                                movies: state.recommendedList[index],
+                              ),
                             ),
                           );
                         });
