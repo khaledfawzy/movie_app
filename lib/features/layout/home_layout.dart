@@ -23,7 +23,7 @@ class _HomeLayoutState extends State<HomeLayout> {
   List<Widget> taps = [
     const HomeScreen(),
     const SearchScreen(),
-    const MovieDetailsScreen(movieId: 1,),
+    const BrowseScreen(),
     const WatchListScreen(),
   ];
 
