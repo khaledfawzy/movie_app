@@ -10,8 +10,7 @@ class BrowseScreen extends StatelessWidget {
     return const Scaffold(
         body: Column(
       children: [
-        Expanded(
-            child: BrowseItemGridView()),
+        Expanded(child: BrowseItemGridView()),
       ],
     ));
   }

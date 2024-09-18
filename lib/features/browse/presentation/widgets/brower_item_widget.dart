@@ -1,34 +1,47 @@
+import 'dart:ui'; // لإضافة تأثير البلور
 import 'package:flutter/material.dart';
-
-import '../../data/models/general_model.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:movie_app/features/browse/data/models/genre_model.dart';
 
 class BrowseItemWidget extends StatelessWidget {
- final GeneralModel genres;
+  final GenreModel genres;
   const BrowseItemWidget({super.key, required this.genres});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 180,
-      height: 100,
-      decoration:   BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(16)),
-        image: DecorationImage(
-          image: AssetImage('assets/images/${ genres.name}.jpeg'),
-          // Replace with your image path
-          fit: BoxFit.cover,
-        ),
+      // width: containerWidth,
+      // height: containerHeight,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16),
       ),
-      child:   Center(
-        child: Text(
-          genres.name,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-          ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16),
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            ImageFiltered(
+              imageFilter: ImageFilter.blur(sigmaX: 2.0, sigmaY: 2.0),
+              child: Image.asset(
+                genres.imgUrl,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Center(
+              child: Text(
+                genres.name,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
 }
+
+
