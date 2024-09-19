@@ -19,7 +19,8 @@ class BrowseRepoImpl implements BrowseRepo {
       int genreId) async {
     try {
       var data = await apiServices.get(
-          endPoint: moviesCategoryNames, parameters: {'with_genres': genreId});
+          endPoint: moviesCategory,
+          parameters: {'with_genres': genreId, 'page': 1});
 
       List<MovieModel> genreMovieList = getMoviesList(data);
       return right(genreMovieList);
@@ -39,7 +40,6 @@ List<MovieModel> getMoviesList(List<dynamic> data) {
   for (var moviesList in data) {
     popularMovieList.add(MovieModel.fromJson(moviesList));
   }
-  // print(popularMovieList);
 
   return popularMovieList;
 }
