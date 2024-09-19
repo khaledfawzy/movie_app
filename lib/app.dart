@@ -7,6 +7,8 @@ import 'package:movie_app/features/home/data/repos/home_repo.dart';
 import 'package:movie_app/features/home/presentation/manager/new_release_cubit/new_release_cubit.dart';
 import 'package:movie_app/features/home/presentation/manager/popular_cubit/popular_cubit.dart';
 import 'package:movie_app/features/home/presentation/manager/recomended_cubit/recommended_cubit.dart';
+import 'package:movie_app/features/search/data/repos/search_repo.dart';
+import 'package:movie_app/features/search/presentation/manager/search_cubit/search_cubit.dart';
 import 'package:movie_app/features/watchlist/presentation/manager/watch_list_cubit/watch_list_cubit.dart';
 
 import 'core/utils/app_theme.dart';
@@ -43,6 +45,11 @@ class MovieApp extends StatelessWidget {
               create: (context) => RecommendedCubit(
                 HomeRepoImpl(getIt<ApiServices>()),
               )..fetchRecommendedMovies(),
+            ),
+            BlocProvider(
+              create: (context) => SearchCubit(
+                SearchRepoImpl(getIt<ApiServices>()),
+              ),
             )
           ],
           child: MaterialApp(
