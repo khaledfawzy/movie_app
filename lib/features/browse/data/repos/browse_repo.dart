@@ -18,9 +18,11 @@ class BrowseRepoImpl implements BrowseRepo {
   Future<Either<Failure, List<MovieModel>>> fetchGenreMovies(
       int genreId) async {
     try {
-      var data = await apiServices.get(
-          endPoint: moviesCategory,
-          parameters: {'with_genres': genreId, 'page': 1});
+      var data = await apiServices.get(endPoint: moviesCategory, parameters: {
+        'with_genres': genreId,
+        'page': 1,
+        'sort_by': 'popularity.desc'
+      });
 
       List<MovieModel> genreMovieList = getMoviesList(data);
       return right(genreMovieList);

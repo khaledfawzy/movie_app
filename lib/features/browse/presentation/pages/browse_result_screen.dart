@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/services/network/api_services.dart';
-import 'package:movie_app/core/utils/app_styles.dart';
 import 'package:movie_app/core/utils/setup_serv_locator.dart';
 import 'package:movie_app/features/browse/data/repos/browse_repo.dart';
 import 'package:movie_app/features/browse/presentation/manager/genre_cubit/genre_cubit.dart';

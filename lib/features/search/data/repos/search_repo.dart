@@ -16,11 +16,12 @@ class SearchRepoImpl implements SearchRepo {
   SearchRepoImpl(this.apiServices);
 
   @override
-  Future<Either<Failure, List<MovieModel>>> fetchSearchResults(String
-      searchText) async {
+  Future<Either<Failure, List<MovieModel>>> fetchSearchResults(
+      String searchText) async {
     try {
-      var data = await apiServices
-          .get(endPoint: searchMovies, parameters: {'query': searchText});
+      var data = await apiServices.get(
+          endPoint: searchMovies,
+          parameters: {'query': searchText, 'sort_by': 'popularity.desc'});
 
       List<MovieModel> recommendedMovieList = getMoviesList(data);
       return right(recommendedMovieList);
