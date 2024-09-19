@@ -61,11 +61,11 @@ flutter_icons:
   android: true
   ios: true
   image_path: "assets/images/logo.png"
-flutter_native_splash:
-  color: "#282A28"
-  image: "assets/images/logo.png"
-  android: true 
-  ios: true
+# flutter_native_splash:
+#   color: "#282A28"
+#   image: "assets/images/logo.png"
+#   android: true 
+#   ios: true
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
