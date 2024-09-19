@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movie_app/core/constants/constants.dart';
 import 'package:movie_app/features/home/data/models/movie_model.dart';
 import 'package:movie_app/features/movie_details/presentation/pages/movie_details_screen.dart';
 import 'package:movie_app/features/search/presentation/manager/search_cubit/search_cubit.dart';
@@ -32,7 +33,7 @@ class SearchScreen extends StatelessWidget {
               ),
               const SizedBox(height: 22),
               // Add your movie list or search results here
-    
+
               BlocBuilder<SearchCubit, SearchState>(
                 builder: (context, state) {
                   if (state is SearchResultsState) {
@@ -87,8 +88,18 @@ class SearchScreen extends StatelessWidget {
                       ),
                     );
                   } else {
-                    return const Center(
-                      child: Text('Try To Search'),
+                    return Expanded(
+                      child: Column(
+                        children: [
+                          const Spacer(),
+                          Image.asset('$baseAssetImageUrl/no_movies.png'),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          const Text("No movies found"),
+                          const Spacer(),
+                        ],
+                      ),
                     );
                   }
                 },
