@@ -50,6 +50,6 @@ class TitleAndTimeWidget extends StatelessWidget {
 String convertMinutesToHoursAndMinutes(int totalMinutes) {
   int hours = totalMinutes ~/ 60;
   int minutes = totalMinutes % 60;
-
-  return '${hours}h ${minutes}m';
+ String minutesString = minutes.toString().padLeft(2, '0');
+  return '${hours}h ${minutesString}m';
 }
