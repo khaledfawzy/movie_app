@@ -1,4 +1,4 @@
-import 'package:dio/dio.dart';
+ import 'package:dio/dio.dart';
 import 'package:movie_app/core/constants/api_constants.dart';
   
 class ApiServices {
@@ -45,3 +45,9 @@ class ApiServices {
 
   ApiServices(this._dio);
 }
+/*
+original title
+overview
+genres
+
+* */
