@@ -34,7 +34,7 @@ class MovieModel extends HiveObject {
   @HiveField(12)
   final int? voteCount;
   @HiveField(13)
-  final String? time;
+  final int? time;
 
   MovieModel({
     this.time,
@@ -70,6 +70,7 @@ class MovieModel extends HiveObject {
       video: json['video'],
       voteAverage: json['vote_average'],
       voteCount: json['vote_count'],
+      time: json['runtime'],
     );
   }
 
@@ -89,6 +90,7 @@ class MovieModel extends HiveObject {
       'video': video,
       'vote_average': voteAverage,
       'vote_count': voteCount,
+      'runtime': time,
     };
   }
 }
@@ -98,7 +100,7 @@ List<MovieModel> movies = [
     // genreIds: [28, 35, 878],
     id: 533535,
     originalLanguage: "en",
-    time: "1h:30m",
+    time: 128,
     originalTitle: "Deadpool & Wolverine",
     backdropPath: "$baseImageUrl/waPt1Dv5kWhbNna5rTv2NGfeb7O.jpg",
     overview:
@@ -112,7 +114,7 @@ List<MovieModel> movies = [
   MovieModel(
     // genreIds: [28, 35, 878],
     id: 533535,
-    time: "1h:30m",
+    time: 128,
     backdropPath: "$baseImageUrl/waPt1Dv5kWhbNna5rTv2NGfeb7O.jpg",
     originalLanguage: "en",
     originalTitle: "Deadpool & Wolverine",
@@ -128,7 +130,7 @@ List<MovieModel> movies = [
     // genreIds: [28, 35, 878],
     id: 533535,
     originalLanguage: "en",
-    time: "1h:30m",
+    time: 128,
     backdropPath: "$baseImageUrl/waPt1Dv5kWhbNna5rTv2NGfeb7O.jpg",
     originalTitle: "Deadpool & Wolverine",
     overview:
@@ -143,7 +145,7 @@ List<MovieModel> movies = [
     // genreIds: [28, 35, 878],
     id: 533535,
     originalLanguage: "en",
-    time: "1h:30m",
+    time: 128,
     originalTitle: "Deadpool & Wolverine",
     backdropPath: "$baseImageUrl/waPt1Dv5kWhbNna5rTv2NGfeb7O.jpg",
     overview:

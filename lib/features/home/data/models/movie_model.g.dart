@@ -17,7 +17,7 @@ class MovieModelAdapter extends TypeAdapter<MovieModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return MovieModel(
-      time: fields[13] as String?,
+      time: fields[13] as int?,
       adult: fields[0] as bool?,
       backdropPath: fields[1] as String?,
       id: fields[2] as int?,

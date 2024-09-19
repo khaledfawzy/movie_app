@@ -12,25 +12,30 @@ class TitleAndTimeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return    Padding(
+    return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(movies.title!,style: AppStyles.textStyle16),
+          Text(movies.title!, style: AppStyles.textStyle16),
           SizedBox(
             height: 10.h,
           ),
           Row(
             children: [
+              const SizedBox(
+                width: 5,
+              ),
               Text(
-                movies.releaseDate.toString(),
+                movies.releaseDate.toString().split('-')[0],
                 style: AppStyles.textStyle12
                     .copyWith(color: AppColors.greyLightColor),
               ),
-              SizedBox(width: 10.w,),
+              SizedBox(
+                width: 10.w,
+              ),
               Text(
-                movies.releaseDate.toString(),
+                convertMinutesToHoursAndMinutes(movies.time ?? 0),
                 style: AppStyles.textStyle12
                     .copyWith(color: AppColors.greyLightColor),
               )
@@ -40,4 +45,11 @@ class TitleAndTimeWidget extends StatelessWidget {
       ),
     );
   }
+}
+
+String convertMinutesToHoursAndMinutes(int totalMinutes) {
+  int hours = totalMinutes ~/ 60;
+  int minutes = totalMinutes % 60;
+
+  return '${hours}h ${minutes}m';
 }
