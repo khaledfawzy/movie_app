@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/constants/constants.dart';
 import 'package:movie_app/features/home/data/models/movie_model.dart';
+import 'package:movie_app/features/movie_details/presentation/pages/movie_details_screen.dart';
 import 'package:movie_app/features/watchlist/presentation/manager/watch_list_cubit/watch_list_cubit.dart';
 import 'package:movie_app/features/watchlist/presentation/widgets/watch_list_item.dart';
 import 'package:skeletonizer/skeletonizer.dart';
@@ -37,8 +38,20 @@ class WatchListScreen extends StatelessWidget {
                               child: Divider(),
                             ),
                             itemCount: state.watchList.length,
-                            itemBuilder: (context, index) => WatchListItem(
-                                movieModel: state.watchList[index]),
+                            itemBuilder: (context, index) => InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => MovieDetailsScreen(
+                                      movieId: state.watchList[index].id!,
+                                    ),
+                                  ),
+                                );
+                              },
+                              child: WatchListItem(
+                                  movieModel: state.watchList[index]),
+                            ),
                           );
                         } else if (state is WatchListFailureState) {
                           return Center(
